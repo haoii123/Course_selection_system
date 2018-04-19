@@ -162,7 +162,7 @@ admin/admin
 讲师帐户：
 alex/alex
 学员帐户：
-rian/123
+eric/123
 
 ## 5. 程序测试过程
 
