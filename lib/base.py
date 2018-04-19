@@ -44,7 +44,7 @@ class Baseclass(object):
         all_data = []
         db_path = os.path.join(settings.db_DIR,type)
         for i in os.listdir(db_path):
-            print("==============>",i)
+            # print("==============>",i)
             if re_json.search(i):
                 continue
             if os.path.isfile(os.path.join(db_path,i)):

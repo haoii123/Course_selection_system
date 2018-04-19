@@ -30,6 +30,7 @@ class Run(object):
             option_view = input('请选择视图:').strip()
             if option_view in menu_dic:
                 if option_view == '4':
+                    print(' 谢谢使用 '.center(50,'#'))
                     exit_flag = True
                 else:
                     menu_dic[option_view].interactive(self)

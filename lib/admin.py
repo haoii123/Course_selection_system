@@ -34,12 +34,12 @@ class Admin(Baseclass):
     def create_student(self):
         student_dict = {}
         student_name = input("学员姓名：")
-        student_sex = input("学员性别：")
+        student_gender = input("学员性别：")
         student_school = input("所属学校：")
         student_classes = input("学员班级：")
-        st1 = Student(student_name, student_sex, student_school, student_classes)
+        st1 = Student(student_name, student_gender, student_school, student_classes)
         student_dict["姓名"] = st1.student_name
-        student_dict["性别"] = st1.student_sex
+        student_dict["性别"] = st1.student_gender
         student_dict["学校"] = st1.student_school
         student_dict["班级"] = st1.student_classes
         Baseclass.save(self, "student", student_dict)
@@ -148,14 +148,17 @@ class Admin_view(Admin):
         while not exit_flag:
             print("""
                 ------- 欢迎进入学员管理 ---------
-                \033[32;1m 1.  创建学员
+                \033[32;1m 1.  查看学员信息
                 2.  ...
                 3.  返回
                 \033[0m
             """)
             option = input("请选择：").strip()
             if int(option) == 1:
-                Admin.create_student(self)
+                # Admin.create_student(self)
+                student_list = Baseclass.open(self, 'student')
+                for i in student_list:
+                    print(i)
             elif int(option) == 2:
                 print("扩展中")
             else:
